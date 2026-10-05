@@ -208,5 +208,5 @@ def period4_aabb_tail(
             and candidate[2] == candidate[3]
             and candidate[0] != candidate[2]
         ):
-            return (candidate[0], candidate[2])
+            return tuple(sorted((candidate[0], candidate[2])))
     return None
