@@ -1,0 +1,97 @@
+version = 1
+
+[[claim]]
+id = "PV-REDUCTION-FWD"
+status = "PROVED"
+statement = "A PV witness gives an eventual quadratic-rounding integer sequence with c_n=o(a_n)."
+does_not_establish = "The converse direction or algebraicity of alpha."
+
+[[claim]]
+id = "PV-REDUCTION-CONVERSE"
+status = "CANDIDATE"
+statement = "An expanding eventual quadratic-rounding sequence with normalized defect tending to zero reconstructs a PV witness."
+does_not_establish = "Promotion before the tail-summation proof is rewritten and independently reviewed."
+
+[[claim]]
+id = "PV-DODGSON-H3"
+status = "PROVED"
+statement = "a_{n+2} H_n^(3) = c_n c_{n+2} - c_{n+1}^2."
+does_not_establish = "Any asymptotic vanishing by itself."
+
+[[claim]]
+id = "PV-SQRT-BARRIER"
+status = "PROVED"
+statement = "If |c_n|=o(a_n^(1/2)) in the expanding regime, then H_n^(3)=0 eventually."
+does_not_establish = "Finite Hankel rank or algebraicity without a separate recurrence bridge."
+
+[[claim]]
+id = "PV-EXP-WINDOW"
+status = "CANDIDATE"
+statement = "Any exponential saving |c_n|=O(alpha^(gamma n)), gamma<1, forces eventual vanishing of a fixed Hankel layer via a rank-one perturbation estimate."
+does_not_establish = "Algebraicity until the contiguous-minor to finite-rank bridge and repaired proof are audited."
+
+[[claim]]
+id = "PV-HANKEL-RANK-BRIDGE"
+status = "OPEN"
+statement = "Eventual vanishing of the relevant fixed family of contiguous Hankel minors implies finite Hankel rank and a constant-coefficient recurrence."
+does_not_establish = "This bridge is not currently proved in the repository."
+
+[[claim]]
+id = "PV-POLY-EQUIV"
+status = "CANDIDATE"
+statement = "Polynomial defect decay c_n=O(alpha^n/n^A) is equivalent to polynomial PV approximation ||lambda alpha^n||=O(n^-A)."
+does_not_establish = "Promotion until the ratio-drift bootstrap proof is written and audited."
+
+[[claim]]
+id = "PV-GCD-NORMALIZATION"
+status = "PROVED"
+statement = "With g_n=gcd(a_n,a_{n+1}), one has g_n g_{n+1} | c_n and the exact b_n,d_n gcd decomposition."
+does_not_establish = "Boundedness of gcds or termination of the frontier."
+
+[[claim]]
+id = "PV-FRESHNESS"
+status = "PROVED"
+statement = "If g_n is eventually bounded by G, every prime p>G dividing c_n divides none of a_n,a_{n+1},a_{n+2}."
+does_not_establish = "Freshness at nonlocal return positions or a contradiction in the mesoscopic regime."
+
+[[claim]]
+id = "PV-TRANSPORT"
+status = "PROVED"
+statement = "a_n^2 c_{n+1}+c_n^2 is divisible by a_{n+1}."
+does_not_establish = "Independent leverage past the square-root threshold."
+
+[[claim]]
+id = "PV-TWO-STEP-RETURN"
+status = "PROVED"
+statement = "Under exact two-step gcd return g_n=g_{n+2}=g, scaling by g transplants the primitive quadratic-defect shape and local freshness."
+does_not_establish = "The coprime-tail quadratic-residue problem, which remains open."
+
+[[claim]]
+id = "PV-SIGMA-CONCAVITY"
+status = "WITHDRAWN"
+statement = "Separate limsup Hankel profiles satisfy unconditional discrete concavity by taking limsups in Dodgson."
+does_not_establish = "Nothing; the limsup-additivity step is invalid."
+
+[[claim]]
+id = "PV-THREE-STATE-MINIMAL"
+status = "WITHDRAWN"
+statement = "No two-step returns force at least three gcd states."
+does_not_establish = "Nothing; A,A,B,B periodic states are a two-state counterexample."
+
+[[claim]]
+id = "PV-BETA-CASCADE"
+status = "HEURISTIC"
+statement = "Under a smooth regularly varying ansatz, subexponential Hankel deficits obey beta_k=(k-1)(k+A-2)."
+does_not_establish = "Any theorem, fixed-rank collapse, or recurrence."
+
+[[claim]]
+id = "PV-PLUCKER-PATH"
+status = "CANDIDATE"
+statement = "Repeated finite-state path and cycle hypotheses yield exact Plucker/common-core divisibility identities."
+does_not_establish = "That such paths are the minimal or exhaustive residual branch."
+
+[[claim]]
+id = "PV-BOUND-GCD-FRONTIER"
+status = "OPEN"
+statement = "The next exact bounded-gcd target is the two-state no-two-step-return period-4 family AABB and shifts, using full b_n,d_n transitions."
+does_not_establish = "A solution of the coprime-tail or full PV problem."
