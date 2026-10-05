@@ -8,6 +8,7 @@ from kernel.pv_exact import (
     gcd_state,
     generate_e,
     large_prime_freshness_holds,
+    period4_aabb_runs,
     period4_aabb_tail,
     transition_data,
     transport_congruence_holds,
@@ -78,3 +79,20 @@ def test_h2_is_the_quadratic_defect():
         assert hankel_minor(values, n, 2) == defect(
             values[n], values[n + 1], values[n + 2]
         )
+
+
+def test_period4_run_finder_reports_maximal_runs():
+    states = [9, 1, 1, 2, 2, 1, 1, 2, 2, 7]
+    runs = period4_aabb_runs(states, min_periods=2)
+    assert len(runs) == 1
+    run = runs[0]
+    assert run.start == 1
+    assert run.end == 9
+    assert run.full_periods == 2
+    assert run.pattern == (1, 2)
+
+
+def test_seed_9_38_has_six_period_transient_blocks():
+    values = generate_e(9, 38, 120)
+    runs = period4_aabb_runs(gcd_state(values), min_periods=3)
+    assert max(run.full_periods for run in runs) == 6
