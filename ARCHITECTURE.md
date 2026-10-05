@@ -1,40 +1,48 @@
 # Repository architecture
 
-This repository adopts the authority separation of `langlands-lab` and
-`finite-math-kernels`, initially without their full governance estate.
+This repository adopts the estate authority model used by
+larsbx/langlands-lab and the exact-arithmetic discipline of
+larsbx/finite-math-kernels.
+ESTATE.toml is the machine-readable source of layout and authority.
 
 The ordering rule is:
 
 ~~~text
-claim authority -> mathematical concern -> implementation
+claim authority -> mathematical concern -> implementation language
 ~~~
 
-## Exact kernel — `kernel/`
+## Exact kernel — kernel/
 
-Canonical executable identities using exact arithmetic only. It may generate
-nearest-integer (E)-sequences, compute defects/Hankel minors/gcd
-normalizations, and expose deterministic predicates.
+Canonical executable identities use exact arithmetic only.
+pv_exact.py supplies nearest-integer E-sequence generation, Bareiss/Hankel
+determinants, gcd transitions, freshness checks, and canonical period-four
+detectors. pv/identities.py retains the explicit H3, transport, gcd-product,
+and scaling interfaces. Conformance tests check agreement between their
+shared identities.
 
-It may not turn a census into a theorem.
+## Claim state — proof/
 
-## Evidence — `tests/`
+proof/claims.toml is the sole authoritative claim ledger.
+docs/dossier.md explains each claim and its boundary; its claim headings
+must match the ledger one for one, including statuses.
 
-Regression evidence for exact identities. Tests support the implementation and
-catch algebraic drift; they do not prove universal mathematics by enumeration.
+## Evidence — tests/
 
-## Experiments — `experiments/`
+Finite regressions support the exact implementation and enforce claim-status
+consistency. They do not prove universal mathematics by enumeration.
 
-Non-authoritative frontier searches. Caps and skipped half-integer ties are
-reported explicitly.
+## Experiments — experiments/
 
-## Claim state — `docs/`
+Non-authoritative frontier searches report caps, skipped half-integer ties,
+maximal run intervals, and replayable exact data. The seed $(9,38)$ supplies
+transient period-four evidence, not an eventual-tail theorem.
 
-`docs/dossier.md` is the status ledger; `docs/roadmap.md` is the active
-research plan; audit notes preserve corrections that change claim meaning.
+## Exposition and tooling
 
-## Initial frontier
+docs/ contains the dossier, roadmap, frontier, references, and audits.
+tools/ enforces repository consistency.
+The CI policy job verifies the manifest against the pinned external estate
+audit without vendoring or weakening it.
 
-The first executable target is the two-state period-four gcd pattern
-(A,A,B,B,ldots). The repository deliberately does not start with the later
-three-state cycle calculations because the October 5 audit found that period
-four is the true minimal no-two-step-return model.
+The first bounded-state target is the two-state no-two-step-return pattern
+$(A,A,B,B,\ldots)$. Conditional three-state calculations remain deferred.
