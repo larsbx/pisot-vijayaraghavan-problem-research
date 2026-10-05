@@ -35,8 +35,10 @@ $$
 The banked identities and reductions are:
 
 1. A PV witness yields an expanding eventual nearest-integer E-sequence with
-   $c_n=o(a_n)$. The converse reconstruction remains **CANDIDATE** pending
-   its rewritten tail-summation proof.
+   $c_n=o(a_n)$. The [converse reconstruction](docs/defect-reconstruction.md)
+   is now **PROVED** for a positive integer tail whose late ratios stay
+   above some fixed $b>1$. Two tail sums give a unique witness and an
+   explicit error bound. Unbounded growth alone is insufficient.
 2. Desnanot–Jacobi gives $H_n^{(2)}=c_n$ and
 
    $$
@@ -44,8 +46,9 @@ The banked identities and reductions are:
    $$
 
 3. In the expanding regime, $c_n=o(a_n^{1/2})$ forces
-   $H_n^{(3)}=0$ eventually. The proved contiguous-layer bridge now gives
-   a tail recurrence of order at most two.
+   $H_n^{(3)}=0$ eventually. The [standalone theorem](docs/square-root-barrier.md)
+   gives a tail recurrence and a Pisot endpoint of degree at most two;
+   the big-O boundary permits a degree-three trace sequence.
 4. With $g_n=\gcd(a_n,a_{n+1})$,
    $g_ng_{n+1}\mid c_n$. If adjacent gcds are bounded by $G$, a prime
    $p>G$ dividing $c_n$ satisfies $p\nmid a_na_{n+1}a_{n+2}$.
@@ -66,8 +69,15 @@ saving $\gamma<1$, the rank-one bound gives fixed-layer vanishing, the
 contiguous-layer bridge gives constant tail recurrence, and the integer
 lattice and error bound give the Pisot endpoint. The strict size is
 $\lfloor1/(1-\gamma)\rfloor+2$, including reciprocal-integer boundaries.
-Polynomial-defect equivalence remains **CANDIDATE**; the bounded-gcd
-period-four and general subexponential frontiers remain **OPEN**.
+The [normalized-defect manuscript](docs/defect-reconstruction.md) also
+proves polynomial-defect equivalence for real $A>0$ and excludes unit
+roots once a rational recurrence is independently established.
+Pisot's square-summability recurrence theorem is explicitly **IMPORTED**;
+its corollary gives the Pisot endpoint for $A>1/2$. The bound at
+$A=1/2$, even little-o, does not by itself supply square summability.
+The general recurrence gap and bounded-gcd period-four/coprime-tail
+frontiers remain **OPEN**. No PV counterexample is asserted for the
+remaining decay ranges.
 
 ## Period-four experiment lane
 
@@ -90,6 +100,8 @@ CONTRIBUTING.md
 kernel/
   pv_exact.py
   pv/identities.py
+  pv/hankel.py
+  pv/reconstruction.py
 proof/claims.toml
 tests/
 experiments/period4_state.py
@@ -97,6 +109,9 @@ tools/check_claims.py
 docs/
   dossier.md
   roadmap.md
+  exponential-window-hankel.md
+  defect-reconstruction.md
+  square-root-barrier.md
   frontier-period4.md
   audit/2026-10-05-thread-audit.md
   experiments/2026-10-05-period4-census.md

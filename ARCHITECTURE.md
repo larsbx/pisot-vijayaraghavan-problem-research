@@ -22,6 +22,9 @@ shared identities.
 pv/hankel.py adds exact rational Hankel instrumentation, the strict size
 calculation, and local recurrence candidates. Its finite outputs do not
 certify the infinite-tail hypotheses of the manuscript theorem.
+pv/reconstruction.py supplies exact finite telescoping and normalized
+defect identities, retaining terminal terms for arbitrary trial parameters.
+It neither estimates an infinite limit nor certifies a witness from a prefix.
 
 ## Claim state — proof/
 
@@ -43,6 +46,9 @@ transient period-four evidence, not an eventual-tail theorem.
 ## Exposition and tooling
 
 docs/ contains the dossier, roadmap, frontier, references, and audits.
+The exponential-window, normalized-defect, and square-root notes supply
+the written proofs. The square-summability route is an explicitly imported
+dependency with a primary citation, separate from the proved corollary.
 tools/ enforces repository consistency.
 The CI policy job verifies the manifest against the pinned external estate
 audit without vendoring or weakening it.

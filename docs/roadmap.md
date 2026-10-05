@@ -16,17 +16,37 @@ The bridge uses one fixed size at every late starting index. It does not
 give recurrence from a finite census, sparse shifts, or moving sizes.
 The withdrawn limsup argument is not used.
 
-## Priority 1 — remaining proof interfaces
+## Completed milestone — normalized-defect proof interfaces
 
-1. Rewrite and independently audit the tail-summation proof for
-   PV-REDUCTION-CONVERSE (formerly the converse portion of PV-D1).
-2. Promote the written PV-SQRT-BARRIER argument to a standalone theorem note.
-3. Write and audit the ratio-drift bootstrap for PV-POLY-EQUIV.
-4. Pin the exact structural citation/proof for PV-SALEM-EXCLUSION
-   (formerly PV-S), conditional on recurrence already being established.
+[Reconstruction](defect-reconstruction.md) now proves
+PV-REDUCTION-CONVERSE with a uniform ratio floor above one, including the
+two-tail error bound and the exact `a_n=n` negative control for weaker
+growth hypotheses. It proves PV-POLY-EQUIV for real `A>0` after establishing
+exponential comparability, and PV-SALEM-EXCLUSION conditional on an
+independently established rational recurrence. The latter uses an Abel
+estimate to exclude unit-circle poles; recurrence is not inferred from
+vanishing error.
 
-The proved exponential-saving theorem does not promote these general
-candidates or the merely-vanishing-error Salem claim.
+The [standalone square-root note](square-root-barrier.md) gives the
+degree-at-most-two Pisot endpoint and its big-O degree-three boundary.
+Pisot's 1938 Chapter III, Theorem I is pinned as PV-L2-RECURRENCE
+(**IMPORTED**). Its proved corollary PV-POLY-L2-RANGE closes the Pisot
+endpoint for `A>1/2` and for square-summable witnesses generally.
+
+## Priority 1 — the remaining recurrence interface
+
+1. Obtain a recurrence for the general vanishing-error/subexponential
+   regime outside an independently verified recurrence or summability
+   hypothesis. Polynomial equivalence is banked; it is not a collapse
+   argument.
+2. Audit stronger published decay criteria before presenting any remaining
+   numerical decay range as new work. In particular, `O(n^-1/2)` or even
+   `o(n^-1/2)` does not automatically imply square summability, as exact
+   rational block controls show. These are not PV counterexamples.
+
+The general PV problem remains open. The imported square-sum criterion
+alone does not close polynomial bounds `0<A<=1/2`; this roadmap does not
+claim a complete literature classification of that range.
 
 ## Priority 2 — two-state period-four frontier
 

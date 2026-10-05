@@ -403,7 +403,7 @@ examples, overlapping recurrence windows, descent controls, and the
 sparse-shift counterexample. The kernel returns local recurrence candidates
 and finite residuals; it does not certify an infinite tail from a prefix.
 
-Claim mapping for the two pending October 5 bootstraps:
+Claim mapping for the two source October 5 bootstraps:
 
 | Bootstrap #1 identifier | Governed bootstrap #5 identifiers | Audited status here |
 | --- | --- | --- |
@@ -424,8 +424,11 @@ Hankel determinants of **increasing order**. That formulation is not the
 hypothesis obtained here, so Section 4 proves the needed bridge directly:
 <https://people.math.ethz.ch/~airibar/Polya_Carlson.pdf>.
 
-Still open: the general PV problem, the subexponential/polynomial defect
-frontier, `PV-POLY-EQUIV`, the converse reduction in its generality, and the
-broader `PV-SALEM-EXCLUSION` claim with merely vanishing error, plus the
-bounded-gcd period-four and coprime-tail programs. This note does not promote
-those claims or reuse the withdrawn limsup shortcut.
+The general PV problem and the recurrence gap for merely vanishing or
+general subexponential errors remain open, as do the bounded-gcd period-four
+and coprime-tail programs. The subsequent
+[normalized-defect note](defect-reconstruction.md) proves reconstruction,
+polynomial equivalence, and the recurrent endpoint separately, and pins an
+imported square-summability theorem for the polynomial range `A>1/2`.
+Those follow-up results do not extend the fixed-size rank-one argument
+here or reuse the withdrawn limsup shortcut.
