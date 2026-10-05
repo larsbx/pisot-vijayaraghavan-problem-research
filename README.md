@@ -79,7 +79,7 @@ docs/
 ~~~bash
 python -m pip install -e '.[test]'
 pytest
-python experiments/period4_state.py --seed-max 40 --length 60
+python experiments/period4_state.py --seed-max 40 --length 120 --min-periods 3
 ~~~
 
 Canonical arithmetic is exact: Python integers and `fractions.Fraction`.
