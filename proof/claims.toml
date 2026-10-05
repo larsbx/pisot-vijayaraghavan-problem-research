@@ -22,19 +22,28 @@ does_not_establish = "Any asymptotic vanishing by itself."
 id = "PV-SQRT-BARRIER"
 status = "PROVED"
 statement = "If |c_n|=o(a_n^(1/2)) for a positive expanding sequence with adjacent growth comparability, then H_n^(3)=0 eventually."
-does_not_establish = "Finite Hankel rank or algebraicity without a separate recurrence bridge."
+does_not_establish = "The general subexponential defect frontier. The resulting fixed layer can now use PV-HANKEL-RANK-BRIDGE."
 
 [[claim]]
 id = "PV-EXP-WINDOW"
-status = "CANDIDATE"
-statement = "Any exponential saving |c_n|=O(alpha^(gamma n)), gamma<1, forces eventual vanishing of a fixed Hankel layer via a rank-one perturbation estimate."
-does_not_establish = "Algebraicity until the contiguous-minor to finite-rank bridge and repaired proof are audited."
+status = "PROVED"
+statement = "For integer a_n positive on a tail with a_{n+1}/a_n -> alpha>1 and |c_n|=O(alpha^(gamma n)), gamma<1, one has a_n=lambda alpha^n+O(alpha^((gamma-1)n)) and D_k(n)=0 for every late n whenever (k-1)(1-gamma)>1. The least size guaranteed by this bound is floor(1/(1-gamma))+2."
+proof = "docs/exponential-window-hankel.md"
+does_not_establish = "Vanishing at equality under big-O, or collapse for gamma=1 or merely subexponential saving."
 
 [[claim]]
 id = "PV-HANKEL-RANK-BRIDGE"
-status = "OPEN"
-statement = "Eventual vanishing of the relevant fixed family of contiguous Hankel minors implies finite Hankel rank and a constant-coefficient recurrence."
-does_not_establish = "This bridge is not currently proved in the repository."
+status = "PROVED"
+statement = "Over any field, D_K(n)=0 for one fixed K and every n>=N gives a tail recurrence of order r<K and tail Hankel rank r, on a tail starting no later than N+K-1. Singular lower layers and r=0 are included."
+proof = "docs/exponential-window-hankel.md"
+does_not_establish = "Recurrence from a single moving minor, sparse shifts, or finite-prefix vanishing."
+
+[[claim]]
+id = "PV-H3"
+status = "PROVED"
+statement = "Under PV-EXP-WINDOW's expanding integer hypotheses, the contiguous-layer bridge gives an integer constant-coefficient tail recurrence; alpha is Pisot of degree at most floor(1/(1-gamma))+1 and lambda is in Q(alpha). This is the audited composition of PV-EXP-WINDOW and PV-HANKEL-RANK-BRIDGE, retaining bootstrap #1's identifier."
+proof = "docs/exponential-window-hankel.md"
+does_not_establish = "The general PV problem, the polynomial/subexponential defect frontier, or other candidate reductions."
 
 [[claim]]
 id = "PV-POLY-EQUIV"

@@ -3,20 +3,30 @@
 PV is open. Authoritative statuses are in proof/claims.toml; finite
 experiments do not close proof obligations.
 
-## Priority 1 — bank the core and close proof interfaces
+## Completed milestone — exponential defect window (issue #2)
+
+PV-EXP-WINDOW, PV-HANKEL-RANK-BRIDGE, and their PV-H3 composition are PROVED.
+The [manuscript proof](exponential-window-hankel.md) establishes the strict
+size condition $(k-1)(1-\gamma)>1$, its least size
+$\lfloor1/(1-\gamma)\rfloor+2$, all reciprocal-integer boundary cases,
+singular-layer descent, constant recurrence coefficients, and the Pisot
+endpoint for this exponential-saving regime.
+
+The bridge uses one fixed size at every late starting index. It does not
+give recurrence from a finite census, sparse shifts, or moving sizes.
+The withdrawn limsup argument is not used.
+
+## Priority 1 — remaining proof interfaces
 
 1. Rewrite and independently audit the tail-summation proof for
    PV-REDUCTION-CONVERSE (formerly the converse portion of PV-D1).
 2. Promote the written PV-SQRT-BARRIER argument to a standalone theorem note.
-3. Prove/cite PV-HANKEL-RANK-BRIDGE with the exact fixed contiguous-minor
-   hypotheses required by the application.
-4. Write and independently audit the rank-one proof for PV-EXP-WINDOW
-   (formerly PV-H3). Never reuse the withdrawn limsup argument.
-5. Write and audit the ratio-drift bootstrap for PV-POLY-EQUIV.
-6. Pin the exact structural citation/proof for PV-SALEM-EXCLUSION
+3. Write and audit the ratio-drift bootstrap for PV-POLY-EQUIV.
+4. Pin the exact structural citation/proof for PV-SALEM-EXCLUSION
    (formerly PV-S), conditional on recurrence already being established.
 
-Issue #2 tracks the exponential-window proof and recurrence endpoint.
+The proved exponential-saving theorem does not promote these general
+candidates or the merely-vanishing-error Salem claim.
 
 ## Priority 2 — two-state period-four frontier
 

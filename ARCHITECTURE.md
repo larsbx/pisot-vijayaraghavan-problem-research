@@ -19,6 +19,9 @@ determinants, gcd transitions, freshness checks, and canonical period-four
 detectors. pv/identities.py retains the explicit H3, transport, gcd-product,
 and scaling interfaces. Conformance tests check agreement between their
 shared identities.
+pv/hankel.py adds exact rational Hankel instrumentation, the strict size
+calculation, and local recurrence candidates. Its finite outputs do not
+certify the infinite-tail hypotheses of the manuscript theorem.
 
 ## Claim state — proof/
 

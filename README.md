@@ -44,8 +44,8 @@ The banked identities and reductions are:
    $$
 
 3. In the expanding regime, $c_n=o(a_n^{1/2})$ forces
-   $H_n^{(3)}=0$ eventually. A separate finite-rank/recurrence bridge is
-   still required.
+   $H_n^{(3)}=0$ eventually. The proved contiguous-layer bridge now gives
+   a tail recurrence of order at most two.
 4. With $g_n=\gcd(a_n,a_{n+1})$,
    $g_ng_{n+1}\mid c_n$. If adjacent gcds are bounded by $G$, a prime
    $p>G$ dividing $c_n$ satisfies $p\nmid a_na_{n+1}a_{n+2}$.
@@ -60,9 +60,14 @@ The banked identities and reductions are:
 6. Exact two-step gcd returns give a local primitive scaling reduction;
    the coprime-tail quadratic-residue problem remains **OPEN**.
 
-The stronger exponential-window rank-one argument and polynomial-defect
-equivalence remain **CANDIDATE**. The fixed-Hankel-rank bridge and the
-bounded-gcd period-four frontier remain **OPEN**.
+The [exponential-window manuscript](docs/exponential-window-hankel.md)
+closes **PV-H3**: under an expanding ratio limit and exponential defect
+saving $\gamma<1$, the rank-one bound gives fixed-layer vanishing, the
+contiguous-layer bridge gives constant tail recurrence, and the integer
+lattice and error bound give the Pisot endpoint. The strict size is
+$\lfloor1/(1-\gamma)\rfloor+2$, including reciprocal-integer boundaries.
+Polynomial-defect equivalence remains **CANDIDATE**; the bounded-gcd
+period-four and general subexponential frontiers remain **OPEN**.
 
 ## Period-four experiment lane
 
