@@ -190,6 +190,61 @@ def gcd_state(values: Sequence[int]) -> list[int]:
     return [gcd(values[i], values[i + 1]) for i in range(len(values) - 1)]
 
 
+@dataclass(frozen=True)
+class Period4Run:
+    start: int
+    end: int
+    state_count: int
+    full_periods: int
+    pattern: tuple[int, int]
+    phase: tuple[int, int, int, int]
+
+
+def period4_aabb_runs(
+    states: Sequence[int], min_periods: int = 2
+) -> list[Period4Run]:
+    """Return maximal A,A,B,B-type runs, allowing cyclic phase shifts."""
+    if min_periods < 1:
+        raise ValueError("min_periods must be positive")
+    out: list[Period4Run] = []
+    n = len(states)
+    width = 4 * min_periods
+    for start in range(max(0, n - width + 1)):
+        block = tuple(states[start : start + 4])
+        if len(block) < 4:
+            continue
+        pattern = None
+        for shift in range(4):
+            candidate = block[shift:] + block[:shift]
+            if (
+                candidate[0] == candidate[1]
+                and candidate[2] == candidate[3]
+                and candidate[0] != candidate[2]
+            ):
+                pattern = tuple(sorted((candidate[0], candidate[2])))
+                break
+        if pattern is None:
+            continue
+        if start > 0 and states[start - 1] == block[3]:
+            continue
+        end = start
+        while end < n and states[end] == block[(end - start) % 4]:
+            end += 1
+        count = end - start
+        if count >= width:
+            out.append(
+                Period4Run(
+                    start=start,
+                    end=end,
+                    state_count=count,
+                    full_periods=count // 4,
+                    pattern=pattern,
+                    phase=block,
+                )
+            )
+    return out
+
+
 def period4_aabb_tail(
     states: Sequence[int], repeats: int = 3
 ) -> tuple[int, int] | None:
