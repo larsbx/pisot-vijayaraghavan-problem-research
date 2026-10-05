@@ -54,8 +54,54 @@ Then $c_nc_{n+2}-c_{n+1}^2=o(a_n)$.
 Divide the Dodgson identity by $a_{n+2}\asymp a_n$ to get
 $H_n^{(3)}=o(1)$. It is an integer, hence eventually zero.
 
-**Boundary.** This does not establish finite Hankel rank or recurrence.
-PV-HANKEL-RANK-BRIDGE remains OPEN.
+**Boundary.** The resulting fixed layer now uses PV-HANKEL-RANK-BRIDGE to
+give a tail recurrence of order at most two. This does not close the general
+subexponential defect frontier.
+
+### PV-EXP-WINDOW — PROVED
+
+For integer $a_n$ positive on a tail with $a_{n+1}/a_n\to\alpha>1$ and
+$|c_n|=O(\alpha^{\gamma n})$, $\gamma<1$, the ratio summation gives
+$a_n=\lambda\alpha^n+O(\alpha^{(\gamma-1)n})$.
+The rank-one determinant bound vanishes at every late starting index when
+$(k-1)(1-\gamma)>1$. Its least guaranteed size is
+$\lfloor1/(1-\gamma)\rfloor+2$.
+
+**Proof.** [Manuscript Sections 1-3](exponential-window-hankel.md).
+
+**Boundary.** Equality at a reciprocal integer gives only bounded
+determinants under big-O; the little-o hypothesis does give vanishing there.
+Integer Lucas and cubic trace sequences certify the big-O distinction.
+The subexponential window and $\gamma=1$ remain outside this theorem.
+
+### PV-HANKEL-RANK-BRIDGE — PROVED
+
+Over any field, a fixed $D_K(n)=0$ for every $n\ge N$ gives a constant tail
+recurrence of order $r<K$ and tail Hankel rank $r$, with tail start at most
+$N+K-1$. Desnanot-Jacobi descent supplies the needed nonvanishing lower
+layer, including singular cases and the eventually zero tail. Overlapping
+windows make the recurrence coefficients constant.
+
+**Proof.** [Manuscript Section 4](exponential-window-hankel.md), using exactly
+the fixed-size, every-late-shift hypothesis obtained above.
+
+**Boundary.** One moving minor, sparse shifts, or finite-prefix vanishing
+does not suffice. No genericity or lower-minor nonvanishing is assumed.
+
+### PV-H3 — PROVED
+
+The audited composition of PV-EXP-WINDOW and PV-HANKEL-RANK-BRIDGE retains
+the earlier PV-H3 identifier in the same authoritative ledger. Under their
+expanding integer hypotheses, the minimal recurrence is monic over
+$\mathbb Z$, $\alpha$ is Pisot of degree at most
+$\lfloor1/(1-\gamma)\rfloor+1$, and $\lambda\in\mathbb Q(\alpha)$.
+
+**Proof.** [Manuscript Sections 4-5](exponential-window-hankel.md): rational
+recurrence, integer shift lattice, and poles of the tail generating series.
+
+**Boundary.** This does not solve the general PV problem or promote
+PV-POLY-EQUIV, the general converse reduction, or PV-SALEM-EXCLUSION in
+its broader merely-vanishing-error setting.
 
 ### PV-GCD-NORMALIZATION — PROVED
 
@@ -133,19 +179,6 @@ tending to zero is proposed to reconstruct a PV witness.
 The tail-summation proof must be rewritten and independently reviewed.
 No promotion is made here.
 
-### PV-EXP-WINDOW — CANDIDATE
-
-Any exponential saving $|c_n|=O(\alpha^{\gamma n})$, $\gamma<1$, is proposed
-to force a fixed Hankel layer to vanish.
-The limsup proof is withdrawn. Its rank-one perturbation replacement needs a
-full writeup and audit; the recurrence endpoint is a separate obligation.
-
-### PV-HANKEL-RANK-BRIDGE — OPEN
-
-Match the exact eventual fixed contiguous-minor hypotheses to finite Hankel
-rank and a constant-coefficient recurrence before claiming algebraicity.
-A moving vanishing minor is insufficient. No bridge is proved here.
-
 ### PV-POLY-EQUIV — CANDIDATE
 
 The proposed equivalence between $c_n=O(\alpha^n/n^A)$ and
@@ -215,7 +248,7 @@ These are aliases for continuity, not an additional status ledger.
 | PV-D1 | PV-REDUCTION-FWD; PV-REDUCTION-CONVERSE |
 | PV-H1 | PV-DODGSON-H3 |
 | PV-H2 | PV-SQRT-BARRIER |
-| PV-H3 | PV-EXP-WINDOW; PV-HANKEL-RANK-BRIDGE |
+| PV-H3 | PV-H3 (audited composition); PV-EXP-WINDOW; PV-HANKEL-RANK-BRIDGE |
 | PV-G1; PV-G2 | PV-GCD-NORMALIZATION |
 | PV-G3 | PV-FRESHNESS |
 | PV-T1 | PV-TRANSPORT |

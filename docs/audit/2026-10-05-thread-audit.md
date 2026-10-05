@@ -20,13 +20,15 @@ docs/dossier.md.
 
 Splitting limsups across the Dodgson product is invalid.
 PV-SIGMA-CONCAVITY is WITHDRAWN. The exponential-window theorem remains
-CANDIDATE pending the rank-one proof and recurrence-endpoint audit.
+separate from that invalid argument: its replacement rank-one proof and
+recurrence endpoint are now PROVED in the issue #2 follow-up below.
 
 ### Moving minors are not moving recurrences
 
 One equality $H_n^{(K(n))}=0$ does not bound the recurrence order of a tail.
-Even the relevant fixed contiguous-minor hypothesis must be matched to an
-explicit finite-rank bridge before claiming recurrence or algebraicity.
+The fixed-size, every-late-shift hypothesis now has the explicit bridge in
+[Section 4 of the manuscript](../exponential-window-hankel.md). It does not
+apply to a finite prefix, sparse shifts, or sizes moving with the index.
 
 ### Reconstruction and polynomial decay remain candidates
 
@@ -74,10 +76,28 @@ duplicate, unknown, malformed, and mismatched claim entries.
 Former bootstrap IDs are mapped in the dossier; no proof obligation is
 closed merely by this reconciliation.
 
+## Issue #2 follow-up: proved exponential window
+
+The [manuscript proof](../exponential-window-hankel.md) closes the sequence
+of implications from exponential defect saving to ratio error, a nonzero
+rank-one main term, fixed-layer integer vanishing, constant tail recurrence,
+and the Pisot endpoint. Its exact condition is $(k-1)(1-\gamma)>1$;
+the least guaranteed size is $\lfloor1/(1-\gamma)\rfloor+2$.
+Reciprocal-integer equality under big-O gives only bounded determinants,
+as the integer Lucas and cubic trace examples demonstrate.
+
+Desnanot-Jacobi descent supplies lower-layer nonvanishing rather than
+assuming it; overlapping windows then force constant coefficients.
+PV-EXP-WINDOW, PV-HANKEL-RANK-BRIDGE, and their retained PV-H3 composition
+are PROVED in the single ledger. The broad Salem-exclusion claim, converse
+reconstruction, polynomial-defect equivalence, and residual frontiers retain
+their prior statuses. The finite regressions instrument identities and
+counterexample controls; they are not the proof of the general theorem.
+
 ## Reset
 
-1. Bank the exact core and close the reconstruction/recurrence interfaces.
-2. Finish the corrected exponential-window and polynomial-decay proofs.
+1. Close the reconstruction and general Salem-exclusion interfaces.
+2. Finish the polynomial-decay proof; the exponential window is now banked.
 3. Attack P4 and analyze its transient spike transitions.
 4. Split small-prime valuation mass from fresh-prime mass.
 5. Return to larger state models only after P4.
