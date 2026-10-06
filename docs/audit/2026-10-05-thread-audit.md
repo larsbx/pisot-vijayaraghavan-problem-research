@@ -30,11 +30,13 @@ The fixed-size, every-late-shift hypothesis now has the explicit bridge in
 [Section 4 of the manuscript](../exponential-window-hankel.md). It does not
 apply to a finite prefix, sparse shifts, or sizes moving with the index.
 
-### Reconstruction and polynomial decay remain candidates
+### Reconstruction requires an explicit expansion hypothesis
 
-The converse reconstruction needs the rewritten tail-summation proof.
-Polynomial defect equivalence needs the ratio-drift bootstrap.
-Neither is promoted by this bootstrap consolidation.
+The bootstrap left converse reconstruction and polynomial equivalence as
+candidates. The follow-up below supplies the two-tail proof and ratio
+bootstrap. Expansion means a uniform late ratio floor above one:
+`a_n=n` is an unbounded quadratic-rounding counterexample to weaker
+readings, with `c_n/a_n=-1/n->0` and ratio limit one.
 
 ### Freshness is local
 
@@ -89,15 +91,39 @@ as the integer Lucas and cubic trace examples demonstrate.
 Desnanot-Jacobi descent supplies lower-layer nonvanishing rather than
 assuming it; overlapping windows then force constant coefficients.
 PV-EXP-WINDOW, PV-HANKEL-RANK-BRIDGE, and their retained PV-H3 composition
-are PROVED in the single ledger. The broad Salem-exclusion claim, converse
-reconstruction, polynomial-defect equivalence, and residual frontiers retain
-their prior statuses. The finite regressions instrument identities and
+are PROVED in the single ledger. The normalized-defect interfaces were
+still candidates at that step and are resolved in the next follow-up.
+The residual frontiers remain open. The finite regressions instrument identities and
 counterexample controls; they are not the proof of the general theorem.
+
+## Follow-up: normalized-defect interfaces
+
+[Reconstruction](../defect-reconstruction.md) closes
+PV-REDUCTION-CONVERSE with its explicit expansion gap, unique positive
+amplitude, and quantitative two-tail error bound. It closes PV-POLY-EQUIV
+for real `A>0`, proving comparability before normalizing the defect.
+PV-SALEM-EXCLUSION is PROVED conditional on rational recurrence: the
+integer shift lattice supplies integrality, and an Abel estimate excludes
+unit-circle poles that open-disk analyticity alone would leave untreated.
+
+The [standalone square-root theorem](../square-root-barrier.md) gives the
+degree-at-most-two endpoint and keeps the cubic big-O boundary explicit.
+Pisot's primary 1938 Chapter III, Theorem I is pinned as
+PV-L2-RECURRENCE, IMPORTED. PV-POLY-L2-RANGE is its proved corollary for
+`A>1/2`, via the repository's recurrent endpoint. Artificial rational
+block errors show that even `o(n^-1/2)` need not be square summable;
+they do not constitute PV counterexamples.
+
+The finite checks retain terminal terms for arbitrary trial parameters and
+instrument exact identities and negative controls. Promotion rests on the
+written proofs and the explicit imported dependency. The full PV problem
+and the recurrence gap outside these hypotheses remain unresolved.
 
 ## Reset
 
-1. Close the reconstruction and general Salem-exclusion interfaces.
-2. Finish the polynomial-decay proof; the exponential window is now banked.
-3. Attack P4 and analyze its transient spike transitions.
-4. Split small-prime valuation mass from fresh-prime mass.
-5. Return to larger state models only after P4.
+1. Audit stronger published criteria for the remaining recurrence interface;
+   reconstruction, polynomial equivalence, and the conditional endpoint
+   are banked, along with the imported square-sum range.
+2. Attack P4 and analyze its transient spike transitions.
+3. Split small-prime valuation mass from fresh-prime mass.
+4. Return to larger state models only after P4.

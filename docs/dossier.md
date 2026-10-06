@@ -15,8 +15,8 @@ $a_n=\lambda\alpha^n+\varepsilon_n$, where $\varepsilon_n\to0$ and $a_n$
 is the nearest integer. Expanding the defect gives
 
 $$
-c_n=\lambda\alpha^n
-(\varepsilon_{n+2}+\alpha^2\varepsilon_n-2\alpha\varepsilon_{n+1})
+c_n=\lambda\alpha^n\cdot
+\bigl(\varepsilon_{n+2}+\alpha^2\varepsilon_n-2\alpha\varepsilon_{n+1}\bigr)
 +\varepsilon_n\varepsilon_{n+2}-\varepsilon_{n+1}^2.
 $$
 
@@ -24,7 +24,27 @@ Thus $c_n=o(a_n)$ and $a_{n+2}-a_{n+1}^2/a_n=c_n/a_n\to0$.
 Eventually the difference has absolute value below $1/2$, so the quadratic
 rounding is unique. Also $a_{n+1}/a_n\to\alpha>1$.
 
-**Boundary.** This does not establish the converse or algebraicity.
+**Boundary.** This direction alone does not establish algebraicity. The
+converse is now proved with the explicit expansion hypothesis below.
+
+### PV-REDUCTION-CONVERSE — PROVED
+
+An expanding integer tail means `a_n>0` and
+`a_(n+1)/a_n>=b>1` eventually. If `delta_n=c_n/a_n->0`, two exact tail
+sums give a unique ratio limit `alpha>=b` and amplitude `lambda>0` with
+`a_n=lambda alpha^n+e_n`, where
+
+$$
+|e_n|\le\frac{\sup_{j\ge n}|\delta_j|}{(b-1)(\alpha-1)}\to0.
+$$
+
+Quadratic rounding and witness rounding are eventual consequences.
+
+**Proof.** [Reconstruction, Sections 1-2](defect-reconstruction.md).
+
+**Boundary.** This does not give recurrence or algebraicity. The exact
+quadratic-rounding tail `a_n=n` has `delta_n=-1/n->0` but ratio limit
+one, rejecting unbounded growth as a substitute for the expansion gap.
 
 ### PV-DODGSON-H3 — PROVED
 
@@ -54,9 +74,14 @@ Then $c_nc_{n+2}-c_{n+1}^2=o(a_n)$.
 Divide the Dodgson identity by $a_{n+2}\asymp a_n$ to get
 $H_n^{(3)}=o(1)$. It is an integer, hence eventually zero.
 
-**Boundary.** The resulting fixed layer now uses PV-HANKEL-RANK-BRIDGE to
-give a tail recurrence of order at most two. This does not close the general
-subexponential defect frontier.
+**Endpoint.** The [standalone theorem](square-root-barrier.md) also shows
+that a uniform ratio floor above one suffices: reconstruction first gives
+the ratio limit and fixed-shift comparisons. The bridge and the recurrent
+endpoint then make `alpha` Pisot of degree at most two.
+
+**Boundary.** Big-O at the square-root boundary permits the degree-three
+trace example with `D_3(n)=-135`. The general subexponential defect
+frontier is not closed.
 
 ### PV-EXP-WINDOW — PROVED
 
@@ -99,9 +124,43 @@ $\lfloor1/(1-\gamma)\rfloor+1$, and $\lambda\in\mathbb Q(\alpha)$.
 **Proof.** [Manuscript Sections 4-5](exponential-window-hankel.md): rational
 recurrence, integer shift lattice, and poles of the tail generating series.
 
-**Boundary.** This does not solve the general PV problem or promote
-PV-POLY-EQUIV, the general converse reduction, or PV-SALEM-EXCLUSION in
-its broader merely-vanishing-error setting.
+**Boundary.** This does not solve the general PV problem or supply
+recurrence from merely vanishing or general polynomial errors. The
+reconstruction and conditional recurrent endpoint are proved separately.
+
+### PV-POLY-EQUIV — PROVED
+
+For real `A>0` and an integer positive tail with ratio limit `alpha>1`,
+`c_n=O(alpha^n n^-A)` is equivalent to
+`a_n=lambda alpha^n+O(n^-A)` for a unique `lambda>0`. This also gives
+the witness/nearest-integer-sequence existence equivalence with
+`||lambda alpha^n||=O(n^-A)`.
+
+**Proof.** [Reconstruction, Section 3](defect-reconstruction.md#3-polynomial-approximation-and-polynomial-defect-are-equivalent).
+The lower-growth ratio bootstrap establishes `a_n asymp alpha^n` before
+dividing the defect by `a_n`; the two-tail estimate then preserves the
+polynomial rate.
+
+**Boundary.** The polynomial fixed-size rank-one estimate does not give
+determinant vanishing. The imported square-sum route below supplies the
+Pisot endpoint in its verified range, not for arbitrary vanishing errors.
+
+### PV-SALEM-EXCLUSION — PROVED
+
+An integer tail `a_n=lambda alpha^n+o(1)` with an independently
+established rational constant-coefficient recurrence has `alpha` Pisot
+and `lambda in Q(alpha)`. This also applies to an expanding tail with
+`c_n/a_n->0` and a rational recurrence, by reconstruction.
+
+**Proof.** [Reconstruction, Section 4](defect-reconstruction.md#4-vanishing-error-excludes-unit-roots-once-recurrence-is-known).
+The integer shift lattice gives a monic integer minimal recurrence.
+An Abel estimate excludes poles on the unit circle, closing the step
+that analyticity in the open disk alone does not justify.
+
+**Boundary.** Recurrence remains a hypothesis. Bounded-error recurrent
+controls `2^n+1` and `2^n+(-1)^n` retain unit roots and fail normalized
+defect decay. No recurrence follows from this proof for a general PV
+witness.
 
 ### PV-GCD-NORMALIZATION — PROVED
 
@@ -170,26 +229,40 @@ the original term.
 This local window does not establish a coprime tail or solve its open
 quadratic-residue dynamics.
 
+## Imported route and its proved range
+
+### PV-L2-RECURRENCE — IMPORTED
+
+If `u_n` satisfies a constant-coefficient recurrence, `a_n` are rational
+integers, and `sum |u_n-a_n|^2<infinity`, then `a_n` also satisfies a
+constant-coefficient recurrence.
+
+**Source.** Charles Pisot (1938), *La répartition modulo 1 et les nombres
+algébriques*, Chapter III, Theorem I, printed pages 230-232. The complete
+citation and hypothesis specialization are in
+[Reconstruction, Section 5](defect-reconstruction.md#5-an-imported-square-summability-route-and-its-polynomial-range)
+and [references](references.md).
+
+**Boundary.** Square summability is an additional hypothesis. Arbitrary
+vanishing errors and the bound `O(n^-1/2)` do not imply it.
+
+### PV-POLY-L2-RANGE — PROVED
+
+PV-POLY-EQUIV with `A>1/2` gives a Pisot number `alpha` and
+`lambda in Q(alpha)`. More generally, a square-summable PV witness has
+this conclusion.
+
+**Proof.** Polynomial errors are square summable when `2A>1`.
+Apply PV-L2-RECURRENCE to `u_n=lambda alpha^n`, then the bridge over `Q`
+and PV-SALEM-EXCLUSION. This is a corollary of an imported theorem, not
+a new proof of that theorem.
+
+**Boundary.** At `A=1/2`, even a little-o error bound need not be square
+summable. The exact rational block controls in the manuscript demonstrate
+this inference failure; they are not PV counterexamples. No conclusion
+for `0<A<=1/2` without additional hypotheses is asserted here.
+
 ## Candidates and open interfaces
-
-### PV-REDUCTION-CONVERSE — CANDIDATE
-
-An expanding eventual quadratic-rounding sequence with normalized defect
-tending to zero is proposed to reconstruct a PV witness.
-The tail-summation proof must be rewritten and independently reviewed.
-No promotion is made here.
-
-### PV-POLY-EQUIV — CANDIDATE
-
-The proposed equivalence between $c_n=O(\alpha^n/n^A)$ and
-$\|\lambda\alpha^n\|=O(n^{-A})$ needs the ratio-drift bootstrap proof.
-It is not promoted by the identity regressions.
-
-### PV-SALEM-EXCLUSION — CANDIDATE
-
-Once recurrence is known, the proposed exclusion of the Salem-recurrent
-branch needs a pinned structural citation or complete proof.
-This does not establish recurrence or algebraicity.
 
 ### PV-COPRIME-TAIL — OPEN
 

@@ -35,10 +35,10 @@ def test_live_ledger_promotion_without_dossier_update_fails():
     dossier = (ROOT / "docs/dossier.md").read_text()
     assert validate_claims(data, dossier) == []
     promoted = deepcopy(data)
-    claim = next(c for c in promoted["claim"] if c["id"] == "PV-POLY-EQUIV")
+    claim = next(c for c in promoted["claim"] if c["id"] == "PV-PLUCKER-PATH")
     claim["status"] = "PROVED"
     assert (
-        "PV-POLY-EQUIV: status mismatch: ledger=PROVED, dossier=CANDIDATE"
+        "PV-PLUCKER-PATH: status mismatch: ledger=PROVED, dossier=CANDIDATE"
         in validate_claims(promoted, dossier)
     )
 
