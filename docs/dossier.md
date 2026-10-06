@@ -15,8 +15,8 @@ $a_n=\lambda\alpha^n+\varepsilon_n$, where $\varepsilon_n\to0$ and $a_n$
 is the nearest integer. Expanding the defect gives
 
 $$
-c_n=\lambda\alpha^n
-(\varepsilon_{n+2}+\alpha^2\varepsilon_n-2\alpha\varepsilon_{n+1})
+c_n=\lambda\alpha^n\cdot
+\bigl(\varepsilon_{n+2}+\alpha^2\varepsilon_n-2\alpha\varepsilon_{n+1}\bigr)
 +\varepsilon_n\varepsilon_{n+2}-\varepsilon_{n+1}^2.
 $$
 

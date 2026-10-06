@@ -173,13 +173,14 @@ floor `1<b<alpha`, to obtain (10). The `lambda` is the same limit in
 `e_n=a_n-lambda alpha^n`:
 
 \[
-c_n=\lambda\alpha^n
-(e_{n+2}+\alpha^2e_n-2\alpha e_{n+1})
+c_n=\lambda\alpha^n\cdot
+\bigl(e_{n+2}+\alpha^2e_n-2\alpha e_{n+1}\bigr)
 +e_ne_{n+2}-e_{n+1}^2.
 \tag{12}
 \]
 
-For fixed shifts the error is `O(n^-A)`, proving (9). If instead one
+The linear-error bracket is `O(n^-A)` and the quadratic remainder is
+`O(n^(-2A))`, proving (9) since `alpha>1`. If instead one
 starts with the norm formulation, choose the nearest integers on the
 positive witness tail; these have the required ratio limit. This closes
 both directions.
@@ -330,5 +331,8 @@ hypothesis remains the unresolved interface in this repository.
 (7)-(8), the exact expansion counterexample, terminal-term controls,
 the defect expansion, recurrent unit-root controls, and rational
 square-sum boundary blocks. They certify finite identities only. The
+two written defect expansions are also checked coefficient by coefficient
+in `tests/test_documented_defect_expansion.py`, including the erroneous
+plus-sign form as a negative control. The
 proofs above and the cited theorem, not enumeration, support the claim
 statuses.
